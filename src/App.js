@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {DieNoClick, DieContainer, Die} from "./styles";
+import {DieNoClick, DieContainer, Die, AppWrapper} from "./styles";
 
 class App extends React.PureComponent {
 
@@ -10,7 +10,7 @@ class App extends React.PureComponent {
         this.state = {
             dieValue: 6,
             noClick: false,
-            dieClass: 'start'
+            firstClick: true
         };
     }
 
@@ -20,9 +20,13 @@ class App extends React.PureComponent {
         });
         let dieValue = Math.floor(Math.random() * 6) + 1;
             this.setState({
-                dieValue: dieValue,
-                dieClass: dieValue
+                dieValue: dieValue
             });
+        if(this.state.firstClick) {
+            this.setState({
+                firstClick: false
+            });
+        }
         setTimeout(() => {
             this.setState({
                 noClick: false
@@ -33,14 +37,10 @@ class App extends React.PureComponent {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+      <AppWrapper>
           <DieNoClick NoClick={this.state.noClick}>
               <DieContainer onClick={this.spinDie}>
-                  <Die DieClass={this.state.dieClass}>
+                  <Die DieClass={this.state.firstClick ? 'start' : this.state.dieValue}>
                       <div className="face six">
                           <span className="dot dot1"/>
                           <span className="dot dot2"/>
@@ -77,7 +77,7 @@ class App extends React.PureComponent {
                   </Die>
               </DieContainer>
           </DieNoClick>
-      </div>
+      </AppWrapper>
     );
   }
 }

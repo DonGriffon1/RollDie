@@ -1,44 +1,45 @@
 import styled, { keyframes } from 'styled-components';
 
 const rotate1 = keyframes`
-  33% { transform: rotateX(-90deg) rotateY(45deg) rotateZ(180deg) translateX(-100px) translateY(100px) translateZ(100px); }
-    66% { transform: rotateX(-180deg) rotateY(90deg) rotateZ(360deg) translateX(-100px) translateY(100px) translateZ(-100px); }
-    100% { transform: rotateY(195deg) rotateX(10deg) rotateZ(2deg)}
+   33% { transform: rotateX(-90deg) rotateY(45deg) rotateZ(180deg) translateX(-100px) translateY(100px) translateZ(100px); }
+   66% { transform: rotateX(-180deg) rotateY(90deg) rotateZ(360deg) translateX(-100px) translateY(100px) translateZ(-100px); }
+   100% { transform: rotateY(195deg) rotateX(10deg) rotateZ(2deg)}
 `;
-
 const rotate2 = keyframes`
-  33% { transform: rotateX(-90deg) rotateY(45deg) rotateZ(180deg) translateX(-100px) translateY(100px) translateZ(100px); }
-    66% { transform: rotateX(-180deg) rotateY(90deg) rotateZ(360deg) translateX(-100px) translateY(100px) translateZ(-100px); }
-    100% { transform: rotateY(105deg) rotateX(3deg) rotateZ(-15deg)}
+   33% { transform: rotateX(-90deg) rotateY(45deg) rotateZ(180deg) translateX(-100px) translateY(100px) translateZ(100px); }
+   66% { transform: rotateX(-180deg) rotateY(90deg) rotateZ(360deg) translateX(-100px) translateY(100px) translateZ(-100px); }
+   100% { transform: rotateY(105deg) rotateX(3deg) rotateZ(-15deg)}
 `;
-
 const rotate3 = keyframes`
-  33% { transform: rotateX(-90deg) rotateY(45deg) rotateZ(180deg) translateX(-100px) translateY(100px) translateZ(100px); }
-    66% { transform: rotateX(-180deg) rotateY(90deg) rotateZ(360deg) translateX(-100px) translateY(100px) translateZ(-100px); }
-    100% { transform: rotateX(-105deg) rotateY(-2deg) rotateZ(20deg) }
+   33% { transform: rotateX(-90deg) rotateY(45deg) rotateZ(180deg) translateX(-100px) translateY(100px) translateZ(100px); }
+   66% { transform: rotateX(-180deg) rotateY(90deg) rotateZ(360deg) translateX(-100px) translateY(100px) translateZ(-100px); }
+   100% { transform: rotateX(-105deg) rotateY(-2deg) rotateZ(20deg) }
 `;
-
 const rotate4 = keyframes`
-  33% { transform: rotateX(-90deg) rotateY(45deg) rotateZ(180deg) translateX(-100px) translateY(100px) translateZ(100px); }
-    66% { transform: rotateX(-180deg) rotateY(90deg) rotateZ(360deg) translateX(-100px) translateY(100px) translateZ(-100px); }
-    100% { transform: rotateX(75deg) rotateY(2deg) rotateZ(-15deg) }
+   33% { transform: rotateX(-90deg) rotateY(45deg) rotateZ(180deg) translateX(-100px) translateY(100px) translateZ(100px); }
+   66% { transform: rotateX(-180deg) rotateY(90deg) rotateZ(360deg) translateX(-100px) translateY(100px) translateZ(-100px); }
+   100% { transform: rotateX(75deg) rotateY(2deg) rotateZ(-15deg) }
 `;
-
 const rotate5 = keyframes`
-  33% { transform: rotateX(-90deg) rotateY(45deg) rotateZ(180deg) translateX(-100px) translateY(100px) translateZ(100px); }
-    66% { transform: rotateX(-180deg) rotateY(90deg) rotateZ(360deg) translateX(-100px) translateY(100px) translateZ(-100px); }
-    100% { transform: rotateY(-75deg) rotateX(-2deg) rotateZ(15deg)}
+   33% { transform: rotateX(-90deg) rotateY(45deg) rotateZ(180deg) translateX(-100px) translateY(100px) translateZ(100px); }
+   66% { transform: rotateX(-180deg) rotateY(90deg) rotateZ(360deg) translateX(-100px) translateY(100px) translateZ(-100px); }
+   100% { transform: rotateY(-75deg) rotateX(-2deg) rotateZ(15deg)}
 `;
-
 const rotate6 = keyframes`
-  33% { transform: rotateX(-90deg) rotateY(45deg) rotateZ(180deg) translateX(-100px) translateY(100px) translateZ(100px); }
-    66% { transform: rotateX(-180deg) rotateY(90deg) rotateZ(360deg) translateX(-100px) translateY(100px) translateZ(-100px); }
-    100% { transform: rotateX(-15deg) rotateY(20deg) rotateZ(0deg)}
+   33% { transform: rotateX(-90deg) rotateY(45deg) rotateZ(180deg) translateX(-100px) translateY(100px) translateZ(100px); }
+   66% { transform: rotateX(-180deg) rotateY(90deg) rotateZ(360deg) translateX(-100px) translateY(100px) translateZ(-100px); }
+   100% { transform: rotateX(-15deg) rotateY(20deg) rotateZ(0deg)}
 `;
-
-
+export const AppWrapper = styled.div`
+   height: 600px;
+   width: 100%;
+   background: darkgray;
+   position: relative;
+   text-align: center;
+`;
 export const DieNoClick = styled.div`
    ${props => props.NoClick ? 'pointer-events: none;' : ''}
+   padding-top: 200px;
 `;
 export const DieContainer = styled.div`
    margin: 5px 5px 15px 5px;
@@ -49,7 +50,7 @@ export const Die = styled.div`
    animation-duration: 1s;
    height: 84px;
    width: 84px;
-   transition: transform 0.2s ease;
+   cursor: pointer;
    position: relative;
    -webkit-transform-style: preserve-3d;
    transform-style: preserve-3d;
@@ -58,7 +59,6 @@ export const Die = styled.div`
    animation-iteration-count: 1;
    animation-timing-function: linear;
    animation-fill-mode: forwards;
-   z-index: 5;
    ${props => props.DieClass === 1 ? `animation-name: ${rotate1};` : ''}
    ${props => props.DieClass === 2 ? `animation-name: ${rotate2};` : ''}
    ${props => props.DieClass === 3 ? `animation-name: ${rotate3};` : ''}
@@ -66,14 +66,13 @@ export const Die = styled.div`
    ${props => props.DieClass === 5 ? `animation-name: ${rotate5};` : ''}
    ${props => props.DieClass === 6 ? `animation-name: ${rotate6};` : ''}
    ${props => props.DieClass === 'start' ? 
-    `perspective: 1000px;
-     -webkit-transform-style: preserve-3d;
-     transform-style: preserve-3d;
-     -webkit-transform: rotateX(-15deg) rotateY(20deg) rotateZ(0deg);
-     transform: rotateX(-15deg) rotateY(20deg) rotateZ(0deg);`
-    : ''}
+   `perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(-15deg) rotateY(20deg) rotateZ(0deg);
+    transform: rotateX(-15deg) rotateY(20deg) rotateZ(0deg);`
+   : ''}
    
-
 .face {
    background: white;
    box-shadow: inset 0 0 15px #ccc;
@@ -82,6 +81,7 @@ export const Die = styled.div`
    width: 84px;
    position: absolute;
 }
+
 .dot {
    background: #444;
    boxShadow: inset 5px 0 10px #000;
