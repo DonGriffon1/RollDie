@@ -84,7 +84,7 @@ export const Die = styled.div`
 
 .dot {
    background: #444;
-   boxShadow: inset 5px 0 10px #000;
+   box-shadow: inset 5px 0 10px #000;
    height: 12px;
    width: 12px;
    border-radius: 50%;
