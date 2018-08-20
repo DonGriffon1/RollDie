@@ -52,13 +52,13 @@ export const Die = styled.div`
    width: 84px;
    cursor: pointer;
    position: relative;
-   -webkit-transform-style: preserve-3d;
-   transform-style: preserve-3d;
    -webkit-backface-visibility: hidden;
+   -ms-backface-visibility: hidden;
    backface-visibility: hidden;
    animation-iteration-count: 1;
    animation-timing-function: linear;
    animation-fill-mode: forwards;
+   transform-style: preserve-3D;
    ${props => props.DieClass === 1 ? `animation-name: ${rotate1};` : ''}
    ${props => props.DieClass === 2 ? `animation-name: ${rotate2};` : ''}
    ${props => props.DieClass === 3 ? `animation-name: ${rotate3};` : ''}
@@ -66,9 +66,7 @@ export const Die = styled.div`
    ${props => props.DieClass === 5 ? `animation-name: ${rotate5};` : ''}
    ${props => props.DieClass === 6 ? `animation-name: ${rotate6};` : ''}
    ${props => props.DieClass === 'start' ? 
-   `perspective: 1000px;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
+   `
     -webkit-transform: rotateX(-15deg) rotateY(20deg) rotateZ(0deg);
     transform: rotateX(-15deg) rotateY(20deg) rotateZ(0deg);`
    : ''}
