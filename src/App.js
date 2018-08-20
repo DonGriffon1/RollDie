@@ -48,7 +48,7 @@ class App extends React.PureComponent {
 
       let dieSize = 84;
       let faceStyle = {
-          background: '#fff',
+          background: 'lightred',
           boxShadow: 'inset 0 0 15px #ccc',
           borderRadius: '5px',
           height: `${dieSize}px`,
