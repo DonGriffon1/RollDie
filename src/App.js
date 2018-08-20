@@ -1,6 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import {DieNoClick, DieContainer, Die, AppWrapper} from "./styles";
 
 class App extends React.PureComponent {
