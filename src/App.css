@@ -27,7 +27,7 @@
   to { transform: rotate(360deg); }
 }
 
-.die {
+/*.die {
   transition: transform 0.2s ease;
   width: 60px;
   height: 60px;
@@ -37,9 +37,9 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   z-index: 5;
-}
+}*/
 
-.die.roll1 {
+.roll1 {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   animation-name: rotate1;
@@ -48,7 +48,7 @@
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
-.die.roll2 {
+.roll2 {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   animation-name: rotate2;
@@ -57,7 +57,7 @@
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
-.die.roll3 {
+.roll3 {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   animation-name: rotate3;
@@ -66,7 +66,7 @@
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
-.die.roll4 {
+.roll4 {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   animation-name: rotate4;
@@ -75,7 +75,7 @@
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
-.die.roll5 {
+.roll5 {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   animation-name: rotate5;
@@ -84,7 +84,7 @@
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
-.die.roll6 {
+.roll6 {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   animation-name: rotate6;
@@ -93,7 +93,7 @@
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
-.die.rollStart {
+.rollStart {
   perspective: 1000px;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -101,14 +101,14 @@
   transform: rotateX(-15deg) rotateY(20deg) rotateZ(0deg);
 }
 
-.die .face {
+.face {
   height: 60px;
   width: 60px;
   position: absolute;
   background: #3e6fa0;
 }
 
-.die .dot {
+.dot {
   width: 8px;
   height: 8px;
   background: #fff;
@@ -117,27 +117,27 @@
   position: absolute;
 }
 
-.die .six {
+.six {
   -webkit-transform: rotateY(10deg) translateZ(30px);
   transform: rotateY(10deg) translateZ(30px);
 }
-.die .one {
+.one {
   -webkit-transform: rotateX(190deg) translateZ(30px);
   transform: rotateX(190deg) translateZ(30px);
 }
-.die .five {
+.five {
   -webkit-transform: rotateY(100deg) translateZ(30px);
   transform: rotateY(100deg) translateZ(30px);
 }
-.die .two {
+.two {
   -webkit-transform: rotateY(-80deg) translateZ(30px);
   transform: rotateY(-80deg) translateZ(30px);
 }
-.die .three {
+.three {
   -webkit-transform: rotateX(100deg) translateZ(30px);
   transform: rotateX(100deg) translateZ(30px);
 }
-.die .four {
+.four {
   -webkit-transform: rotateX(-80deg) translateZ(30px);
   transform: rotateX(-80deg) translateZ(30px);
 }
