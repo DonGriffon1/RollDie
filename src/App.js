@@ -13,13 +13,11 @@ class App extends React.PureComponent {
     }
 
     spinDie = () => {
+        let dieValue = Math.floor(Math.random() * 6) + 1;
         this.setState({
+            dieValue: dieValue,
             noClick: true
         });
-        let dieValue = Math.floor(Math.random() * 6) + 1;
-            this.setState({
-                dieValue: dieValue
-            });
         if(this.state.firstClick) {
             this.setState({
                 firstClick: false
